@@ -1,0 +1,5 @@
+// Defaults for anyone building ScooterLink. Put your own team and bundle ID in
+// Config/Signing.xcconfig (git-ignored; copy Signing.example.xcconfig).
+PRODUCT_BUNDLE_IDENTIFIER = com.example.scooterlink
+DEVELOPMENT_TEAM =
+#include? "Signing.xcconfig"

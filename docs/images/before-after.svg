@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#172554"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="380" rx="24" fill="url(#bg2)"/>
+
+  <!-- Before -->
+  <g transform="translate(50,40)">
+    <rect width="530" height="300" rx="20" fill="#1e293b" stroke="#7f1d1d" stroke-width="2"/>
+    <text x="32" y="50" fill="#fca5a5" font-size="15" font-weight="700" letter-spacing="2">BEFORE</text>
+    <text x="32" y="86" fill="#f8fafc" font-size="24" font-weight="700">Honda RoadSync on iPhone</text>
+    <g font-size="18" fill="#e2e8f0">
+      <text x="32" y="140"><tspan fill="#f87171" font-weight="700">✕</tspan>  Spotify &amp; other apps: not supported</text>
+      <text x="32" y="178"><tspan fill="#f87171" font-weight="700">✕</tspan>  Handlebar buttons do Honda's thing only</text>
+      <text x="32" y="216"><tspan fill="#f87171" font-weight="700">✕</tspan>  A big app doing maps, calls, voice…</text>
+      <text x="32" y="254"><tspan fill="#4ade80" font-weight="700">✓</tspan>  Apple Music</text>
+    </g>
+  </g>
+
+  <!-- After -->
+  <g transform="translate(620,40)">
+    <rect width="530" height="300" rx="20" fill="#1e293b" stroke="#16a34a" stroke-width="2"/>
+    <text x="32" y="50" fill="#86efac" font-size="15" font-weight="700" letter-spacing="2">AFTER</text>
+    <text x="32" y="86" fill="#f8fafc" font-size="24" font-weight="700">ScooterLink</text>
+    <g font-size="18" fill="#e2e8f0">
+      <text x="32" y="140"><tspan fill="#4ade80" font-weight="700">✓</tspan>  Whatever is playing: any app</text>
+      <text x="32" y="178"><tspan fill="#4ade80" font-weight="700">✓</tspan>  Connects by itself when you turn the key</text>
+      <text x="32" y="216"><tspan fill="#4ade80" font-weight="700">✓</tspan>  Dash switches to phone mode automatically</text>
+      <text x="32" y="254"><tspan fill="#4ade80" font-weight="700">✓</tspan>  Tiny: no GPS, no account, no network</text>
+    </g>
+  </g>
+</svg>

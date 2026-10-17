@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 430" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f43f5e"/>
+      <stop offset="1" stop-color="#f97316"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="430" rx="24" fill="url(#bg)"/>
+  <text x="60" y="62" fill="#f8fafc" font-size="30" font-weight="700">How ScooterLink works</text>
+  <text x="60" y="94" fill="#94a3b8" font-size="17">Your handlebar buttons → the scooter's Bluetooth unit → your iPhone → whatever is playing</text>
+
+  <!-- 1 handlebar -->
+  <g transform="translate(60,140)">
+    <rect width="230" height="200" rx="18" fill="#1e293b" stroke="#334155"/>
+    <text x="115" y="38" fill="#f8fafc" font-size="18" font-weight="600" text-anchor="middle">Handlebar switch</text>
+    <g transform="translate(70,58)">
+      <rect width="90" height="110" rx="14" fill="#0f172a" stroke="#475569"/>
+      <path d="M45 16 l14 14 h-28 z" fill="#e2e8f0"/>
+      <path d="M45 94 l14 -14 h-28 z" fill="#e2e8f0"/>
+      <path d="M14 55 l14 -14 v28 z" fill="#e2e8f0"/>
+      <path d="M76 55 l-14 -14 v28 z" fill="#e2e8f0"/>
+      <circle cx="45" cy="55" r="11" fill="url(#accent)"/>
+    </g>
+    <text x="115" y="190" fill="#94a3b8" font-size="14" text-anchor="middle">Prev · Next · Select · Back</text>
+  </g>
+
+  <line x1="296" y1="240" x2="346" y2="240" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- 2 dash / BTU -->
+  <g transform="translate(352,140)">
+    <rect width="230" height="200" rx="18" fill="#1e293b" stroke="#334155"/>
+    <text x="115" y="38" fill="#f8fafc" font-size="18" font-weight="600" text-anchor="middle">PCX dash + BT unit</text>
+    <rect x="35" y="58" width="160" height="92" rx="12" fill="#020617" stroke="#475569"/>
+    <text x="115" y="96" fill="#f97316" font-size="15" font-weight="700" text-anchor="middle">PHONE SCREEN</text>
+    <text x="115" y="122" fill="#64748b" font-size="13" text-anchor="middle">"HONDA BTU"</text>
+    <text x="115" y="190" fill="#94a3b8" font-size="14" text-anchor="middle">1-byte button events</text>
+  </g>
+
+  <!-- BLE link -->
+  <g>
+    <line x1="588" y1="240" x2="638" y2="240" stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="6 6" marker-end="url(#arrow)"/>
+    <text x="613" y="222" fill="#cbd5e1" font-size="13" font-weight="600" text-anchor="middle">BLE</text>
+    <text x="616" y="268" fill="#64748b" font-size="11" text-anchor="middle">encrypted</text>
+  </g>
+
+  <!-- 3 ScooterLink -->
+  <g transform="translate(644,140)">
+    <rect width="230" height="200" rx="18" fill="#1e293b" stroke="url(#accent)" stroke-width="2.5"/>
+    <text x="115" y="38" fill="#f8fafc" font-size="18" font-weight="700" text-anchor="middle">ScooterLink</text>
+    <rect x="80" y="54" width="70" height="104" rx="13" fill="#0f172a" stroke="#64748b"/>
+    <rect x="93" y="68" width="44" height="7" rx="3.5" fill="url(#accent)"/>
+    <rect x="93" y="84" width="44" height="7" rx="3.5" fill="#334155"/>
+    <rect x="93" y="100" width="30" height="7" rx="3.5" fill="#334155"/>
+    <circle cx="115" cy="136" r="9" fill="none" stroke="#64748b" stroke-width="2"/>
+    <text x="115" y="190" fill="#94a3b8" font-size="14" text-anchor="middle">auto-connects at ignition</text>
+  </g>
+
+  <line x1="880" y1="240" x2="930" y2="240" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="905" y="222" fill="#cbd5e1" font-size="12" font-weight="600" text-anchor="middle">iOS</text>
+  <text x="905" y="270" fill="#64748b" font-size="11" text-anchor="middle">media</text>
+  <text x="905" y="284" fill="#64748b" font-size="11" text-anchor="middle">commands</text>
+
+  <!-- 4 apps -->
+  <g transform="translate(936,140)">
+    <rect width="204" height="200" rx="18" fill="#1e293b" stroke="#334155"/>
+    <text x="102" y="38" fill="#f8fafc" font-size="18" font-weight="600" text-anchor="middle">Any media app</text>
+    <g font-size="15" fill="#e2e8f0">
+      <rect x="22" y="56" width="160" height="28" rx="14" fill="#14532d"/><text x="102" y="75" text-anchor="middle">Spotify</text>
+      <rect x="22" y="90" width="160" height="28" rx="14" fill="#7f1d1d"/><text x="102" y="109" text-anchor="middle">YouTube Music</text>
+      <rect x="22" y="124" width="160" height="28" rx="14" fill="#831843"/><text x="102" y="143" text-anchor="middle">Apple Music</text>
+    </g>
+    <text x="102" y="180" fill="#94a3b8" font-size="14" text-anchor="middle">podcasts, audiobooks…</text>
+  </g>
+
+  <text x="60" y="395" fill="#64748b" font-size="14">Select / Back = play-pause · Next / Previous = tracks · holding a button counts once · no GPS, no timers: wakes only on Bluetooth events</text>
+</svg>

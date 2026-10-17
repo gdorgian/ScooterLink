@@ -1,0 +1,5 @@
+.DS_Store
+App/build/
+App/*.xcodeproj
+App/Sources/Info.plist
+App/Config/Signing.xcconfig

@@ -1,0 +1,32 @@
+name: ScooterLink
+options:
+  bundleIdPrefix: com.example
+  deploymentTarget:
+    iOS: "17.0"
+settings:
+  base:
+    CODE_SIGN_STYLE: Automatic
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "1.1"
+    CURRENT_PROJECT_VERSION: "1"
+targets:
+  ScooterLink:
+    type: application
+    platform: iOS
+    sources: [Sources]
+    configFiles:
+      Debug: Config/Base.xcconfig
+      Release: Config/Base.xcconfig
+    settings:
+      base:
+        TARGETED_DEVICE_FAMILY: "1"
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: ScooterLink
+        INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription: ScooterLink connects to your Honda dashboard over Bluetooth to read the handlebar buttons.
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
+    info:
+      path: Sources/Info.plist
+      properties:
+        UIBackgroundModes: [bluetooth-central]
+        UILaunchScreen: {}
