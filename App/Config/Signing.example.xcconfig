@@ -1,3 +1,4 @@
 // Copy to Signing.xcconfig and fill in. Signing.xcconfig is git-ignored.
 DEVELOPMENT_TEAM = ABCDE12345
 PRODUCT_BUNDLE_IDENTIFIER = com.yourname.scooterlink
+// ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon   // uncomment to use your own icon

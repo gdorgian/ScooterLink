@@ -13,7 +13,7 @@ targets:
   ScooterLink:
     type: application
     platform: iOS
-    sources: [Sources]
+    sources: [Sources, Resources]
     configFiles:
       Debug: Config/Base.xcconfig
       Release: Config/Base.xcconfig

@@ -55,17 +55,34 @@ Android app talks to the scooter and by logging the traffic. Full write-up:
 
 Honda limited it to one app. Now it controls any of them.
 
-## Requirements
+## Download (no Mac needed)
 
-- Honda PCX 2025 with the TFT dash and RoadSync support. Tested on a PCX125 2025. Other
-  RoadSync bikes probably speak the same protocol but are untested.
-- An iPhone and a Mac with Xcode 16+ and [XcodeGen](https://github.com/yonaskolb/XcodeGen).
-- An Apple developer account to sign it (a free one works, but the app then expires every 7 days).
+1. Get **`ScooterLink-x.y.ipa`** from the [latest release](https://github.com/gdorgian/ScooterLink/releases/latest).
+2. Install it with a sideloading tool and your own Apple ID:
+   - **[SideStore](https://sidestore.io)** or **[AltStore](https://altstore.io)**: on the iPhone, free Apple ID.
+     They re-sign the app every 7 days for you (AltStore needs AltServer on your computer for that).
+   - **[Sideloadly](https://sideloadly.io)**: from a Mac or PC, free Apple ID (re-install every 7 days).
+   - Paid Apple developer account: no 7-day limit.
+3. Pair it with the scooter (see **First ride** below).
 
-This is a **sideload-only** app. It uses a private iOS framework (MediaRemote) for the
-"control any app" part, so it can't go on the App Store.
+It can't be on the App Store: the "control any app" part uses a private iOS framework (MediaRemote).
 
-## Install
+**Android?** Not yet. If you want it, 👍 the [Android issue](https://github.com/gdorgian/ScooterLink/issues).
+Android allows this officially, so it's very doable if enough riders want it.
+
+## First ride
+
+1. In the dash's Bluetooth menu, **delete RoadSync's phone pairing** (the scooter keeps one phone key at a time).
+2. Turn the ignition on, open ScooterLink, tap the **wrench → Devices → Scan**, and tap `HONDA BTU …`. Accept the iOS pairing prompt.
+3. Done. From now on it connects by itself whenever you turn the key. Don't swipe the app away
+   in the app switcher, because iOS won't relaunch an app you force-quit.
+
+Requirements: Honda PCX 2025 with the TFT dash and RoadSync support. Tested on a PCX125 2025;
+other RoadSync bikes probably speak the same protocol but are untested.
+
+## Build it yourself
+
+You need a Mac with Xcode 16+ and [XcodeGen](https://github.com/yonaskolb/XcodeGen).
 
 ```bash
 git clone https://github.com/gdorgian/ScooterLink.git
@@ -75,16 +92,10 @@ xcrun devicectl list devices                                  # find your iPhone
 bash install-device.sh <your-iphone-identifier>
 ```
 
-Then, at the scooter:
-
-1. In the dash's Bluetooth menu, **delete RoadSync's phone pairing** (the scooter keeps one phone key at a time).
-2. Turn the ignition on, open ScooterLink, go to **Devices → Scan**, and tap `HONDA BTU …`. Accept the iOS pairing prompt.
-3. Done. From now on it connects by itself whenever you turn the key. Don't swipe the app away
-   in the app switcher, because iOS won't relaunch an app you force-quit.
-
 **Make it yours:** drop a photo of your own bike into `App/Sources/Assets.xcassets` as an image set
-called `Logo` (shown on the home screen) and as the `AppIcon` (1024×1024). The folder is git-ignored,
-so your photo never ends up in a commit.
+called `Logo` (shown on the home screen) and an `AppIcon` (1024×1024), then set
+`ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon` in `Config/Signing.xcconfig`. That folder is
+git-ignored, so your photo never ends up in a commit.
 
 ## Known limits
 

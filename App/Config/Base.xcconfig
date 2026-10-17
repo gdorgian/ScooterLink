@@ -2,4 +2,7 @@
 // Config/Signing.xcconfig (git-ignored; copy Signing.example.xcconfig).
 PRODUCT_BUNDLE_IDENTIFIER = com.example.scooterlink
 DEVELOPMENT_TEAM =
+// Built-in moped icon. Set this to AppIcon in Signing.xcconfig to use your own
+// App/Sources/Assets.xcassets/AppIcon (e.g. a photo of your bike).
+ASSETCATALOG_COMPILER_APPICON_NAME = DefaultAppIcon
 #include? "Signing.xcconfig"
