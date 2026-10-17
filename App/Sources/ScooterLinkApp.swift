@@ -8,72 +8,63 @@ struct ScooterLinkApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(client)
-                .onAppear { UIApplication.shared.isIdleTimerDisabled = true }
+                .preferredColorScheme(.dark)
+                .tint(.orange)
         }
     }
 }
 
 struct ContentView: View {
     @EnvironmentObject private var client: SABClient
-    @State private var tab = 3
 
     var body: some View {
         NavigationStack {
-            VStack(spacing: 0) {
-                statusHeader
-                Picker("", selection: $tab) {
-                    Text("Ride").tag(3)
-                    Text("Buttons").tag(0)
-                    Text("Devices").tag(1)
-                    Text("Log").tag(2)
+            HomeView()
+                .toolbar {
+                    ToolbarItem(placement: .topBarLeading) {
+                        NavigationLink {
+                            DiagnosticsView()
+                        } label: {
+                            Image(systemName: "wrench.and.screwdriver")
+                        }
+                    }
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Menu {
+                            Button("Reconnect", systemImage: "arrow.clockwise") { client.reconnectLast() }
+                            Button("Show phone screen on dash", systemImage: "iphone.gen3") { client.ensurePhoneScreen() }
+                            Divider()
+                            Button("Disconnect", systemImage: "xmark.circle") { client.disconnect() }
+                            Button("Forget scooter key", systemImage: "key.slash", role: .destructive) { client.forgetKey() }
+                        } label: { Image(systemName: "ellipsis.circle") }
+                    }
                 }
-                .pickerStyle(.segmented)
-                .padding(.horizontal)
-                .padding(.bottom, 8)
-
-                switch tab {
-                case 3: RideView(client: client)
-                case 0: ButtonsView()
-                case 1: DevicesView(onConnect: { tab = 3 })
-                default: LogView()
-                }
-            }
-            .navigationTitle("ScooterLink")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Menu {
-                        Button("Reconnect last scooter", systemImage: "arrow.clockwise") { client.reconnectLast() }
-                        Button("Ask dash for phone screen", systemImage: "iphone") { client.requestPhoneScreen() }
-                        Toggle("Register colours at connect", isOn: $client.registerColors)
-                        Divider()
-                        Button("Disconnect", systemImage: "xmark.circle") { client.disconnect() }
-                        Button("Forget scooter key", systemImage: "key.slash", role: .destructive) { client.forgetKey() }
-                    } label: { Image(systemName: "ellipsis.circle") }
-                }
-            }
+                .toolbarBackground(.hidden, for: .navigationBar)
         }
     }
+}
 
-    private var statusHeader: some View {
-        HStack(spacing: 10) {
-            Circle().fill(statusColor).frame(width: 12, height: 12)
-            VStack(alignment: .leading, spacing: 2) {
-                Text(client.phase.rawValue).font(.headline)
-                if let name = client.connectedName { Text(name).font(.caption).foregroundStyle(.secondary) }
+/// Scanning, raw button events and the protocol log, for when something needs looking into.
+struct DiagnosticsView: View {
+    @State private var tab = 0
+
+    var body: some View {
+        VStack(spacing: 0) {
+            Picker("", selection: $tab) {
+                Text("Devices").tag(0)
+                Text("Buttons").tag(1)
+                Text("Log").tag(2)
             }
-            Spacer()
+            .pickerStyle(.segmented)
+            .padding(.horizontal)
+            .padding(.bottom, 8)
+            switch tab {
+            case 0: DevicesView(onConnect: { tab = 1 })
+            case 1: ButtonsView()
+            default: LogView()
+            }
         }
-        .padding()
-    }
-
-    private var statusColor: Color {
-        switch client.phase {
-        case .ready: return .green
-        case .failed: return .red
-        case .idle: return .gray
-        default: return .orange
-        }
+        .navigationTitle("Diagnostics")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

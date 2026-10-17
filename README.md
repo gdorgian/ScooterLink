@@ -5,6 +5,8 @@ Spotify, YouTube Music, podcasts, audiobooks… whatever is playing. No Honda ap
 
 ![How ScooterLink works](docs/images/how-it-works.svg)
 
+<p align="center"><img src="docs/images/app.png" width="320" alt="ScooterLink home screen"></p>
+
 ## Why this exists
 
 Honda's RoadSync app is the official way to link a phone to the PCX dashboard. On iPhone its
@@ -80,6 +82,10 @@ Then, at the scooter:
 3. Done. From now on it connects by itself whenever you turn the key. Don't swipe the app away
    in the app switcher, because iOS won't relaunch an app you force-quit.
 
+**Make it yours:** drop a photo of your own bike into `App/Sources/Assets.xcassets` as an image set
+called `Logo` (shown on the home screen) and as the `AppIcon` (1024×1024). The folder is git-ignored,
+so your photo never ends up in a commit.
+
 ## Known limits
 
 - **AirPods noise control can't be switched.** iOS accepts the private call from an app and then
@@ -107,6 +113,7 @@ App/
   Sources/SABCrypto.swift      RSA → AES key exchange, validation, CRC-16
   Sources/SABClient.swift      CoreBluetooth: auto-connect, handshake, phone screen, buttons
   Sources/ButtonActions.swift  button → system media command
+  Sources/HomeView.swift       home screen: status, last button, button map
   Sources/DashScreen.swift     dash screen encoder (experimental, off)
   Tests/main.swift             crypto/encoder self-tests (swiftc, runs on a Mac)
 docs/PROTOCOL.md               the protocol, as far as it's known

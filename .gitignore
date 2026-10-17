@@ -3,3 +3,5 @@ App/build/
 App/*.xcodeproj
 App/Sources/Info.plist
 App/Config/Signing.xcconfig
+# Your own bike photo for the app icon / home screen (see README)
+App/Sources/Assets.xcassets/
