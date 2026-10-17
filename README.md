@@ -67,7 +67,7 @@ Honda limited it to one app. Now it controls any of them.
 
 It can't be on the App Store: the "control any app" part uses a private iOS framework (MediaRemote).
 
-**Android?** Not yet. If you want it, 👍 the [Android issue](https://github.com/gdorgian/ScooterLink/issues).
+**Android?** Not yet. If you want it, 👍 the [Android issue](https://github.com/gdorgian/ScooterLink/issues/1).
 Android allows this officially, so it's very doable if enough riders want it.
 
 ## First ride
