@@ -1,9 +1,14 @@
-# ScooterLink
+# ScooterLink: Spotify on your Honda handlebar buttons (RoadSync alternative for iPhone)
 
 [![Featured by Awesome REA](https://raw.githubusercontent.com/reacher-z/Awesome-REA/477658fa73f6860e86cd1fc526657c2efdc25194/assets/featured-by-awesome-rea-inline.svg)](https://awesomerea.org/resources/scooterlink-honda-roadsync-case/)
 
-**Control *any* music app on your iPhone from the handlebar buttons of a Honda PCX (2025).**
-Spotify, YouTube Music, podcasts, audiobooks… whatever is playing. No Honda app needed.
+**Control *any* music app on your iPhone from the handlebar buttons of your Honda.**
+Spotify, YouTube Music, podcasts, audiobooks… whatever is playing. No Honda RoadSync app needed.
+
+Honda RoadSync on iPhone only controls Apple Music. ScooterLink is a free iPhone app that replaces
+it, so the handlebar switch plays, pauses and skips tracks in Spotify and every other app. It works
+with Honda motorcycles and scooters that use RoadSync: CB750 Hornet, XL750 Transalp, CB650R, CBR650R,
+NC750X, X-ADV, Forza, ADV350, Rebel 1100, PCX and more.
 
 ![How ScooterLink works](docs/images/how-it-works.svg)
 
@@ -79,8 +84,26 @@ Android allows this officially, so it's very doable if enough riders want it.
 3. Done. From now on it connects by itself whenever you turn the key. Don't swipe the app away
    in the app switcher, because iOS won't relaunch an app you force-quit.
 
-Requirements: Honda PCX 2025 with the TFT dash and RoadSync support. Tested on a PCX125 2025;
-other RoadSync bikes probably speak the same protocol but are untested.
+Requirements: a Honda with RoadSync. Built on a PCX125 2025.
+
+## FAQ
+
+**Does Honda RoadSync work with Spotify on iPhone?**
+No. On iPhone, RoadSync's music controls only work with Apple Music. ScooterLink makes the Honda
+handlebar buttons control Spotify, YouTube Music, podcasts and any other app.
+
+**Which Honda bikes does it work with?**
+Honda bikes and scooters that use RoadSync (the dash shows up as `HONDA BTU …` in Bluetooth), such as
+the CB750 Hornet, XL750 Transalp, CB650R, CBR650R, NC750X, X-ADV, Forza, ADV350, Rebel 1100 and PCX.
+
+**Do I need the Honda RoadSync app?**
+No. ScooterLink pairs with the bike by itself. Delete RoadSync's pairing on the dash first.
+
+**Is it free? Is it on the App Store?**
+Free and open source. It can't be on the App Store, so you install it with SideStore, AltStore or Sideloadly.
+
+**Android?**
+Not yet. 👍 the [Android issue](https://github.com/gdorgian/ScooterLink/issues/1) if you want it.
 
 ## Build it yourself
 
