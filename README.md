@@ -1,5 +1,7 @@
 # ScooterLink
 
+[![Featured by Awesome REA](https://raw.githubusercontent.com/reacher-z/Awesome-REA/477658fa73f6860e86cd1fc526657c2efdc25194/assets/featured-by-awesome-rea-inline.svg)](https://awesomerea.org/resources/scooterlink-honda-roadsync-case/)
+
 **Control *any* music app on your iPhone from the handlebar buttons of a Honda PCX (2025).**
 Spotify, YouTube Music, podcasts, audiobooks… whatever is playing. No Honda app needed.
 
